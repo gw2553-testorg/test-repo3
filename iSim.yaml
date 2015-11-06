@@ -1,0 +1,32 @@
+# Test repo
+
+instances:   
+  legacyServer1: 
+    eSHS: legacy
+    notes:  
+      - ssz1234     
+      - Decom due July 2015  
+       
+  volume1:          
+    eSHS: is_storage_san       
+    dataCenter: RO     # [ GL | RO | Description (other) ]
+    envType: prod             # [ prod or nonprod ]
+    useCase: general      # [ general (default) | generalArchive | ESX | VERITAS | SPOD | OPOD | OPODBackup ]
+    size:  100               # [ Size in GB ]
+    custom:               # [ optional - freeform text.  If you specify custom expect additional delay ]
+      - Custom text requirement 1
+      - Custom text requirement 2
+      
+  volume4:  &v4        
+    eSHS: is_storage_san       
+    dataCenter: RO     # [ GL | RO | Description (other) ]
+    envType: prod             # [ prod or nonprod ]
+    useCase: general      # [ general (default) | generalArchive | ESX | VERITAS | SPOD | OPOD | OPODBackup ]
+    size:  100               # [ Size in GB ]
+    custom:               # [ optional - freeform text.  If you specify custom expect additional delay ]
+      - Custom text requirement 1
+      - Custom text requirement 2
+
+  volume2:
+    <<: *v4
+    
